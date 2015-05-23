@@ -1,0 +1,23 @@
+{
+  "name": "cricketweb",
+  "version": "0.0.0",
+  "authors": [
+    "crikket.007@gmail.com"
+  ],
+  "description": "Python Tornado WebSite",
+  "main": "server.py",
+  "keywords": [
+    "python",
+    "tornado"
+  ],
+  "license": "MIT",
+  "homepage": "jmoore.cricket",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

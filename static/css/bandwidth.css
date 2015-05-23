@@ -1,0 +1,31 @@
+#content {
+    padding-top: 30px;
+}
+
+#header {
+    background-color: #ddd;
+    padding-left: 10px;
+}
+
+#header a {
+    text-decoration: none;
+}
+
+.usage_container {
+    width: 33%;
+    display: inline-block;
+}
+.usage_detail {
+    margin: 0 auto;
+    margin-left: 25px;
+    font-size: x-large;
+}
+h3.usage_header {
+    font-size: 0.9em;
+    font-family: sans-serif;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+.usage-row {
+    background: #EEE;
+}

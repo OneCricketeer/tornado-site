@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Bandwidth Monitor{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="static/css/bandwidth.css"/>
+{% endblock %}
+
+{% block js %}
+{# <script src="bower_components/d3/d3.js"></script> #}
+{% endblock %}
+
+{% block header %}
+<div class="nav row">
+    <a href="/">Home</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="row usage-row">
+    <div class="usage_container">
+        <h3 class="usage_header">Bandwidth Class</h3>
+
+        <p id="bandwidth_class" class="usage_detail">{{ bandwidth.bandwidth_class }}</p>
+    </div>
+    <div class="usage_container">
+        <h3 class="usage_header">Policy Bytes (MB)</h3>
+
+        <p class="usage_detail">
+            <span id="policy_down">{{ bandwidth.policy_down }}</span>
+            <span>/</span>
+            <span id="policy_up">{{ bandwidth.policy_up }}</span>
+        </p>
+    </div>
+    <div class="usage_container">
+        <h3 class="usage_header">Actual Bytes (MB)</h3>
+
+        <p class="usage_detail">
+            <span id="actual_down">{{ bandwidth.actual_down }}</span>
+            <span>/</span>
+            <span id="actual_up">{{ bandwidth.actual_up }}</span>
+        </p>
+    </div>
+<p>
+    <span>Last Update: </span><span id="last_update">never</span><br/>
+    <span>Next Update: </span><span id="next_update">never</span>
+</p>
+</div>
+
+<div class="container">
+    <canvas></canvas>
+</div>
+{% endblock %}
+{% block footer %}
+<p>
+    &copy; Jordan Moore 2015. <br/>
+    Powered by Raspberry Pi and Python
+</p>
+{% endblock %}
