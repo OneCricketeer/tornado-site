@@ -3,7 +3,6 @@ from tornado.concurrent import Future
 from tornado import gen
 
 from app.views import BaseHandler
-from app.lib import bandwidth_scraper
 from models import BandwidthUsage
 
 class HomeHandler(BaseHandler):

@@ -2,11 +2,10 @@
 {% block title %}Bandwidth Monitor{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="static/css/bandwidth.css"/>
+<link type="text/css" rel="stylesheet" href="{{ static_url('css/bandwidth.css') }}" />
 {% endblock %}
 
 {% block js %}
-{# <script src="bower_components/d3/d3.js"></script> #}
 {% endblock %}
 
 {% block header %}
@@ -16,7 +15,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="row usage-row">
     <div class="usage_container">
         <h3 class="usage_header">Bandwidth Class</h3>
