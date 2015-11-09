@@ -12,7 +12,7 @@ tornado.options.parse_command_line()
 
 settings = {
     # debug: If True the application runs in debug mode
-    'debug': True,
+    'debug': False,
 
     # gzip: If True, responses in textual formats will be gzipped automatically.
     'gzip': True,
@@ -26,7 +26,7 @@ settings = {
     # ui_modules and ui_methods: http://www.tornadoweb.org/en/stable/overview.html#ui-modules
 
     # Used by RequestHandler.get_secure_cookie and set_secure_cookie to sign cookies.
-    'cookie_secret': '4SDEepjjw495rFx7XXQtvxp7AFvJXYmpn2UjyMCmjTD8jccuqMGnuaB9Jpbb8RXK',
+    'cookie_secret': 'TODO Insert your secret key here',
 
     # login_url: The authenticated decorator will redirect to this url
     # if the user is not logged in. Can be further customized by

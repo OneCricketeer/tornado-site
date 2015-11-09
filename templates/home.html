@@ -1,18 +1,14 @@
 {% extends "base.html" %}
+
 {% block title %}Home{% endblock %}
+
 {% block css %}
-<style type="text/css">
-    .important { color: #336699; }
-</style>
+<link type="text/css" rel="stylesheet" href="{{ static_url('css/home.css') }}" />
 {% endblock %}
+
 {% block content %}
-<h1>Index</h1>
-<p class="important">
-    Welcome to my awesome homepage.
-</p>
-{% endblock %}
-{% block footer %}
-<p>
-   Powered by Raspberry Pi and Python
-</p>
+<div id="home-gradient"></div>
+<div>
+    <img id="pypi-img" class="centered" src="{{ static_url('img/raspberry-pi-python.png') }}" />
+</div>
 {% endblock %}

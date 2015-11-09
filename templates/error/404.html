@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<p>404 NOT FOUND</p>
+{% block title %}404: Not Found{% endblock %}
+
+{% block css %}
+<link type="text/css" rel="stylesheet" href="{{ static_url('css/404.css') }}" />
 {% endblock %}
+
+{% block js %}
+<script src="{{ static_url('js/static_flicker.js') }}" ></script>
+{% endblock %}
+
+{% block content %}
+<h1 class="blur">404</h1>
+
+<div class="frame">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<canvas id="canvas"></canvas>
+{% endblock %}
+
+
+
