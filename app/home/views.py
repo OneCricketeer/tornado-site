@@ -26,18 +26,3 @@ class BandwidthHandler(BaseHandler):
             self.bandwidth.policy_down = response['policy_bytes']['received']
             self.values.update({'bandwidth': self.bandwidth})
             self.render("bandwidth_monitor.html", **self.values)
-        else:
-            pass
-
-
-
-
-# class BandwidthSocketHandler(tornado.websocket.WebSocketHandler):
-#     def open(self):
-#         print("WebSocket opened")
-#
-#     def on_message(self, message):
-#         self.write_message(u"You said: " + message)
-#
-#     def on_close(self):
-#         print("WebSocket closed")
