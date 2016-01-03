@@ -13,18 +13,16 @@ class BaseHandler(RequestHandler):
     def env(self):
         return self.application.env
 
-    def get_error_html(self, status_code, **kwargs):
+    def write_error(self, status_code, **kwargs):
+        self.set_status(status_code)
         try:
-            self.render('error/%s.html' % status_code)
-        except TemplateNotFound:
+            self.render('error/{}.html'.format(status_code))
+        except (TemplateNotFound, HTTPError):
             try:
-                self.render('error/50x.html', status_code=status_code)
-            except TemplateNotFound:
+                self.render('error/50x.html')
+            except (TemplateNotFound, HTTPError):
                 raise HTTPError(500)
                 # Session.close()
-
-    def on_finish(self):
-        pass # Session.remove()
 
     def render(self, template=None, **kwds):
         logging.info("["+template+"] " + str(kwds))
@@ -48,4 +46,4 @@ class BaseHandler(RequestHandler):
 
 class NoDestinationHandler(BaseHandler):
     def get(self):
-        self.get_error_html(404)
+        self.write_error(404)
