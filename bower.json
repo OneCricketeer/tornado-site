@@ -11,7 +11,6 @@
     "tornado"
   ],
   "license": "MIT",
-  "homepage": "jmoore.cricket",
   "private": true,
   "ignore": [
     "**/.*",

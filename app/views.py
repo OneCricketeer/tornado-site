@@ -25,7 +25,7 @@ class BaseHandler(RequestHandler):
                 # Session.close()
 
     def render(self, template=None, **kwds):
-        logging.info("["+template+"] " + str(kwds))
+        # logging.info("["+template+"] " + str(kwds))
         try:
             template = self.env.get_template(template)
         except TemplateNotFound:
