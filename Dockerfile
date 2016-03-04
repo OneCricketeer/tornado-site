@@ -1,4 +1,4 @@
-FROM supervisor:2-alpine
+FROM supervisor:alpine
 
 RUN apk update \
     && rm -rf /var/cache/apk/*
