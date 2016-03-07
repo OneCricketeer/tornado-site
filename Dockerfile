@@ -1,6 +1,6 @@
 FROM cricketeerone/supervisor:latest
 
-RUN apk update \
+RUN apk update && apk upgrade \
     && rm -rf /var/cache/apk/*
 
 ENV APP_NAME tornado-app
