@@ -7,7 +7,7 @@ ENV APP_NAME tornado-app
 
 COPY . /opt/$APP_NAME
 
-RUN addgroup -S www-data && adduser -D -H -s /sbin/nologin -G www-data www-data
+RUN adduser -s /sbin/nologin -G www-data -h /var/www -D www-data
 
 RUN mkdir /var/log/$APP_NAME \
     && cp -f /opt/$APP_NAME/conf/supervisor.conf /etc/supervisord.d/$APP_NAME.conf \
