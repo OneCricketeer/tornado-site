@@ -1,0 +1,7 @@
+.git
+README.md
+env
+*.iml
+bower.json
+conf/
+!conf/supervisor.conf

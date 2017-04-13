@@ -1,13 +1,10 @@
 FROM cricketeerone/supervisor:armhf
 
-RUN apk update && apk upgrade \
-    && rm -rf /var/cache/apk/*
-
 ENV APP_NAME tornado-app
 
-COPY . /opt/$APP_NAME
-
 RUN adduser -s /sbin/nologin -G www-data -h /var/www -D www-data
+
+COPY . /opt/$APP_NAME
 
 RUN mkdir /var/log/$APP_NAME \
     && cp -f /opt/$APP_NAME/conf/supervisor.conf /etc/supervisord.d/$APP_NAME.conf \

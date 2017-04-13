@@ -1,13 +1,10 @@
 FROM cricketeerone/supervisor:latest
 
-RUN apk update && apk upgrade \
-    && rm -rf /var/cache/apk/*
-
 ENV APP_NAME tornado-app
 
-COPY . /opt/$APP_NAME
-
 RUN addgroup -S www-data && adduser -D -H -s /sbin/nologin -G www-data www-data
+
+COPY . /opt/$APP_NAME
 
 RUN mkdir /var/log/$APP_NAME \
     && cp -f /opt/$APP_NAME/conf/supervisor.conf /etc/supervisord.d/$APP_NAME.conf \
@@ -17,3 +14,4 @@ RUN mkdir /var/log/$APP_NAME \
     && pip install -qr /opt/$APP_NAME/requirements.txt
 
 EXPOSE 8001-8004
+
